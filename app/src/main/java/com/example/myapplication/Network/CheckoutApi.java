@@ -11,6 +11,7 @@ import com.example.myapplication.Model.QueryRequest.QueryRequestStatus;
 import com.example.myapplication.Model.QueryRequest.QueryResponseStatus;
 import com.example.myapplication.Model.ValidateCharge.ValidateChargeRequest;
 import com.example.myapplication.Model.ValidateCharge.ValidateChargeResponse;
+import com.example.myapplication.Model.cancelrequest.cancelRequest;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -56,5 +57,12 @@ public interface CheckoutApi {
             @Header("Authorization") String accessToken,
             @Body InitiateRefundRequest initiateRefundRequest
     );
+
+    @POST("requests/cancel-request")
+    Call<QueryResponseStatus> cancelRequest(
+            @Header("Authorization") String accessToken,
+            @Body cancelRequest Cancelrequest
+            );
+
 
 }

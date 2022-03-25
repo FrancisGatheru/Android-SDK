@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.Service.AuthenticateUser;
 import com.example.myapplication.Service.InitiateRefund;
+import com.example.myapplication.Service.initiateCancelRequest;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
 //main runnable class
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 InitiateRefund initiateRefund = new InitiateRefund();
                 initiateRefund.requestInitiateRefund();
+                initiateCancelRequest Cancelresponse = new initiateCancelRequest();
+                Cancelresponse.cancelRequest();
             }
         }, 12000);
     }
